@@ -15,7 +15,7 @@
  
 </head>
 <body id="body">
-  <header>
+  <header id="home">
     <nav>
       <a href="#">
         <img src="assets/images/logo.svg" alt="W. a news website">
@@ -34,11 +34,11 @@
         <a class="close-button" id="close-button" href="javascript:void(0);" onclick="myFunction2()">
           <img src="assets/images/icon-menu-close.svg" alt="">
         </a>
-        <a href="#">Home</a>
-        <a href="#">New</a>
-        <a href="#">Popular</a>
-        <a href="#">Trending</a>
-        <a href="#">Categories</a>
+        <a href="#" class="nav-item">Home</a>
+        <a href="#" class="nav-item">New</a>
+        <a href="#" class="nav-item">Popular</a>
+        <a href="#" class="nav-item">Trending</a>
+        <a href="#" class="nav-item">Categories</a>
         
       </div>
     </nav>
@@ -188,7 +188,19 @@
       }
     } 
     
-
+    // making menu disappear after clicking the link
+    const header = document.getElementById('home');
+    var toggleMenu = document.getElementById('toggle-menu');
+    var hideButton = document.getElementById ("close-button");
+    var burgerMenu = document.getElementById ("menu-for-mobile");
+    header.addEventListener('click', function (evt) {
+      const clickTarget = evt.target;
+      if (clickTarget.tagName !== "A") { return; }
+      toggleMenu.classList.remove("active");
+      toggleMenu.style.display = 'none';
+      hideButton.style.display = 'none';
+      burgerMenu.style.display = "flex";
+    });
     
 
   </script>
