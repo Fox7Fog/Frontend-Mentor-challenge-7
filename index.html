@@ -191,14 +191,14 @@
     // making menu disappear after clicking the link
     const header = document.getElementById('home');
     var toggleMenu = document.getElementById('toggle-menu');
-    var hideButton = document.getElementById ("close-button");
+    //var hideButton = document.getElementById ("close-button");
     var burgerMenu = document.getElementById ("menu-for-mobile");
     header.addEventListener('click', function (evt) {
       const clickTarget = evt.target;
       if (clickTarget.tagName !== "A") { return; }
       toggleMenu.classList.remove("active");
-      toggleMenu.style.display = 'none';
-      hideButton.style.display = 'none';
+      toggleMenu.style.display = "none";
+      //hideButton.style.display = "flex";
       burgerMenu.style.display = "flex";
     });
     
