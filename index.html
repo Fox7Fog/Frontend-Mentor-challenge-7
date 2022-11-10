@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | News homepage</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet"> 
+
+ 
+</head>
+<body id="body">
+  <header>
+    <nav>
+      <a href="#">
+        <img src="assets/images/logo.svg" alt="W. a news website">
+      </a>
+      <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">New</a>
+        <a href="#">Popular</a>
+        <a href="#">Trending</a>
+        <a href="#">Categories</a>
+      </div>
+      <a class="menu-for-mobile" id="menu-for-mobile" href="javascript:void(0);" onclick="myFunction()">
+        <img src="assets/images/icon-menu.svg" alt="">
+      </a>
+      <div id="toggle-menu">
+        <a class="close-button" id="close-button" href="javascript:void(0);" onclick="myFunction2()">
+          <img src="assets/images/icon-menu-close.svg" alt="">
+        </a>
+        <a href="#">Home</a>
+        <a href="#">New</a>
+        <a href="#">Popular</a>
+        <a href="#">Trending</a>
+        <a href="#">Categories</a>
+        
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="main-news">
+      <img class="desktop-img" src="assets/images/image-web-3-desktop.jpg" alt="">
+      <img class="mobile-img" src="assets/images/image-web-3-mobile.jpg" alt="">
+      <div class="text">
+        <h1>The Bright Future of Web 3.0?</h1>
+
+        <div>
+          <p>We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
+          But is it really fulfilling its promise?</p>
+          <a href="#">Read more</a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="side-news">
+      <h2>New</h2> 
+
+      <div class="side-news-div">
+        <h3><a href="#">Hydrogen VS Electric Cars</a></h3>
+        <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
+      </div>
+
+      <hr>
+
+      <div class="side-news-div">
+        <h3><a href="#">The Downsides of AI Artistry</a></h3>
+        <p>What are the possible adverse effects of on-demand AI image generation?</p>
+      </div>
+
+      <hr>
+
+      <div class="side-news-div">
+        <h3><a href="#">Is VC Funding Drying Up?</a></h3>
+        <p>Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+      </div>
+
+    </div>
+
+    <div class="bottom-feed">
+
+      <div class="news">
+        <img class="news-image" src="assets/images/image-retro-pcs.jpg" alt="">
+        <div>
+          <h3>01</h3>
+          <h4><a href="#">Reviving Retro PCs</a></h4>
+          <p>What happens when old PCs are given modern upgrades?</p>
+        </div>
+      </div>
+
+      <div class="news">
+        <img class="news-image" src="assets/images/image-top-laptops.jpg" alt="">
+        <div>
+          <h3>02</h3>
+          <h4><a href="#">Top 10 Laptops of 2022</a></h4>
+          <p>Our best picks for various needs and budgets.</p>
+        </div>
+      </div>
+
+      <div class="news"> 
+        <img class="news-image" src="assets/images/image-gaming-growth.jpg" alt="">
+        <div>
+          <h3>03</h3> 
+          <h4><a href="#">The Growth of Gaming</a></h4>
+          <p>How the pandemic has sparked fresh opportunities.</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    function myFunction() {
+      var x = document.getElementById("toggle-menu");
+      if (x.style.display === "flex") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "flex";
+      }
+
+      var menuIcon = document.getElementById("menu-for-mobile");
+      if (x.style.display === "flex") {
+        menuIcon.style.display = "none";
+      } else {
+        menuIcon.style.display = "flex";
+      }
+    }
+
+    function myFunction2() {
+      
+      var x = document.getElementById("toggle-menu");
+      if (x.style.display === "none") {
+        x.style.display = "flex";
+      } else {
+        x.style.display = "none";
+      }
+      
+      var menuIcon = document.getElementById("menu-for-mobile");
+      if (x.style.display === "none") {
+        menuIcon.style.display = "flex";
+      } else {
+        menuIcon.style.display = "none";
+      }
+    } 
+
+    var menuForMobile = document.getElementById('menu-for-mobile');
+    menuForMobile.style.display = 'none';
+    if (matchMedia) {
+        const x = window.matchMedia('(max-width: 960px)');
+        x.addListener(viewScreen);
+        // call function this function is only to check the size of screen
+        viewScreen(x)
+    }
+
+    function viewScreen(x){
+      if (x.matches) {
+        menuForMobile.style.display = 'flex';
+      } else {
+        menuForMobile.style.display = 'none';
+      }
+    }    
+
+    var toggleMenu = document.getElementById('toggle-menu');
+    var hideButton = document.getElementById ("close-button"); // the cross img to not be shown
+    hideButton.style.display = "none";
+    toggleMenu.style.display = 'none';
+    if (matchMedia) {
+        const y = window.matchMedia('(min-width: 960px)');
+        y.addListener(viewScreen2);
+        //call function this function is only to check the size of screen
+        viewScreen2(y)
+    }
+
+    function viewScreen2(y){
+      if (y.matches) {
+        toggleMenu.style.display = 'none';
+        hideButton.style.display = 'none';
+      } else {
+        //toggleMenu.style.display = 'flex';
+        hideButton.style.display = 'flex';
+      }
+    } 
+    
+
+    
+
+  </script>
+
+
+
+</body> 
+</html>
