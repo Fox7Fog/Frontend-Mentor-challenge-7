@@ -34,11 +34,11 @@
         <a class="close-button" id="close-button" href="javascript:void(0);" onclick="myFunction2()">
           <img src="assets/images/icon-menu-close.svg" alt="">
         </a>
-        <a href="#" class="nav-item">Home</a>
-        <a href="#" class="nav-item">New</a>
-        <a href="#" class="nav-item">Popular</a>
-        <a href="#" class="nav-item">Trending</a>
-        <a href="#" class="nav-item">Categories</a>
+        <a href="#" class="nav-item" name="hide">Home</a>  
+        <a href="#" class="nav-item" name="hide">New</a>
+        <a href="#" class="nav-item" name="hide">Popular</a>
+        <a href="#" class="nav-item" name="hide">Trending</a>
+        <a href="#" class="nav-item" name="hide">Categories</a>
         
       </div>
     </nav>
@@ -195,7 +195,7 @@
     var burgerMenu = document.getElementById ("menu-for-mobile");
     header.addEventListener('click', function (evt) {
       const clickTarget = evt.target;
-      if (clickTarget.tagName !== "A") { return; }
+      if (clickTarget.name !== "hide") { return; }
       toggleMenu.classList.remove("active");
       toggleMenu.style.display = "none";
       //hideButton.style.display = "flex";
